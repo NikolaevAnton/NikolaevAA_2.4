@@ -9,7 +9,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    let dataInfo = Registration()
+    private let dataInfo = Registration()
     
     @IBOutlet var userNameTextField: UITextField!
     

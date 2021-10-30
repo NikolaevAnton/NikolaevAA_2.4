@@ -9,8 +9,13 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
 
+    private let dataInfo = Registration()
+    
+    @IBOutlet var welcomeLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        welcomeLabel.text = "Привет " + dataInfo.name
     }
     
 
