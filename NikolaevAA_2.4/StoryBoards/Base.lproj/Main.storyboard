@@ -20,27 +20,28 @@
                                 <rect key="frame" x="45" y="319" width="324" height="178"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Pcx-QZ-YSA">
-                                        <rect key="frame" x="0.0" y="0.0" width="324" height="84"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="324" height="34"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="введите логин" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y1u-cL-jfx">
                                                 <rect key="frame" x="0.0" y="0.0" width="324" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="введите пароль" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oRe-UK-G8L">
-                                                <rect key="frame" x="0.0" y="50" width="324" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
-                                            </textField>
                                         </subviews>
                                     </stackView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="введите пароль" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oRe-UK-G8L">
+                                        <rect key="frame" x="0.0" y="50" width="324" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfx-6G-1ra">
                                         <rect key="frame" x="0.0" y="100" width="324" height="31"/>
                                         <color key="tintColor" red="0.67285391657622817" green="0.56247189297428768" blue="0.18472240370489634" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Регистрация"/>
                                         <connections>
-                                            <segue destination="Cql-yI-4Sz" kind="presentation" modalPresentationStyle="fullScreen" id="biA-SV-ycx"/>
+                                            <action selector="registrationButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="20Z-WI-9Ke"/>
+                                            <segue destination="Cql-yI-4Sz" kind="presentation" modalPresentationStyle="fullScreen" id="6GO-Jz-f7K"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="TDJ-D0-Pdj">
@@ -52,13 +53,19 @@
                                                 <color key="tintColor" systemColor="systemYellowColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Забыли логин?"/>
+                                                <connections>
+                                                    <action selector="foggotInfo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e6s-UO-9yp"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7N-FV-5HJ">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7N-FV-5HJ">
                                                 <rect key="frame" x="190.5" y="0.0" width="133.5" height="31"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                                 <color key="tintColor" systemColor="systemYellowColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Забыли пароль?"/>
+                                                <connections>
+                                                    <action selector="foggotInfo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g48-nZ-jzC"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -74,6 +81,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Wvn-79-Jrd" secondAttribute="trailing" constant="45" id="pCX-6c-YAw"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="oRe-UK-G8L" id="3aA-91-4Xi"/>
+                        <outlet property="userNameTextField" destination="Y1u-cL-jfx" id="aeX-Ig-Dyd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -205,6 +216,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l29-Qj-hal" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Cql-yI-4Sz" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Xcn-2j-CrX"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ibs-B9-A7X">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
